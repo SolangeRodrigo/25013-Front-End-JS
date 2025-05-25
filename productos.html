@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Patitas al Sol🐾</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="icon" type="image/png" href="logos/logo_perro_transparente.png" />
+  </head>
+
+  <body>
+    <header>
+      <img src="logos/logo.perro.png" alt="Logo de la tienda canina" width="230" />
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="#carrito" id="ver-carrito">🛒 Carrito (<span id="contador">0</span>)</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <h2>Nuestros Productos</h2>
+      <section class="productos">
+        <article class="producto">
+            <!-- Seccion Alimentos  -->
+          <img src="productos/alimento1.png" alt="Alimento" />
+          <h3>Alimento Razas Medianas y Grandes</h3>
+          <p>$8000</p>
+          <button onclick="agregarAlCarrito('Alimento Razas Medianas y Grandes', 8000)">Agregar al carrito</button>
+        </article>
+        <article class="producto">
+          <img src="productos/alimento2.png" alt="Alimento" />
+          <h3>Alimento Todos los Tamaños</h3>
+          <p>$7500</p>
+          <button onclick="agregarAlCarrito('Alimento Todos los Tamaños', 7500)">Agregar al carrito</button>
+        </article>
+        <article class="producto">
+          <img src="productos/alimento3.png" alt="Alimento" />
+          <h3>Alimento para Cachorros</h3>
+          <p>$8500</p>
+          <button onclick="agregarAlCarrito('Alimento para Cachorros', 8500)">Agregar al carrito</button>
+        </article>
+        <article class="producto">
+          <img src="productos/juguete1.png" alt="Juguete para perro" />
+          <h3>Juguete mordedor Dona</h3>
+          <p>$1200</p>
+          <button onclick="agregarAlCarrito('Juguete mordedor Dona', 1200)">Agregar al carrito</button>
+        </article>
+        <!-- Seccion Jueguetes  -->
+        <article class="producto">
+          <img src="productos/juguete2.png" alt="Juguete para perro" />
+          <h3>Juguete mordedor Helado</h3>
+          <p>$2300</p>
+          <button onclick="agregarAlCarrito('Juguete mordedor Helado', 2300)">Agregar al carrito</button>
+        </article>
+        <article class="producto">
+          <img src="productos/juguete3.png" alt="Juguete para perro" />
+          <h3>Jueguete mordedor Huesito</h3>
+          <p>$1500</p>
+          <button onclick="agregarAlCarrito('Jueguete mordedor Huesito', 1500)">Agregar al carrito</button>
+        </article>
+        <!-- Seccion OTROS  -->
+        <article class="producto">
+          <img src="productos/correa1.png" alt="Correa" />
+          <h3>Correa Gruesa</h3>
+          <p>$5300</p>
+          <button onclick="agregarAlCarrito('Correa Gruesa', 5300)">Agregar al carrito</button>
+        </article>
+        <article class="producto">
+          <img src="productos/correa2.png" alt="Correa" />
+          <h3>Correa Fina</h3>
+          <p>$3500</p>
+          <button onclick="agregarAlCarrito('Correa Fina', 3500)">Agregar al carrito</button>
+        </article>
+        <article class="producto">
+          <img src="productos/correa3.png" alt="Correa" />
+          <h3>Correa Retractil</h3>
+          <p>$4200</p>
+          <button onclick="agregarAlCarrito('Correa Retractil', 4200)">Agregar al carrito</button>
+        </article>
+      </section>
+
+<section id="carrito">
+  <h2>Carrito de compras</h2>
+  <ul id="lista-carrito"></ul>
+  <p><strong>Total: $<span id="total">0</span></strong></p>
+</section>
+
+<!-- Footer -->
+<footer style="background-color: #f4f4f4; padding: 30px 20px; text-align: center;">
+  <a style="font-size: 18px; margin-bottom: 20px;">
+    &copy; 2025 Solange Abigail Rodrigo - Tienda Canina
+  </a>
+  <div style="display: flex; justify-content: center; gap: 30px;">
+    <a href="https://facebook.com" target="_blank" style="color: #3b5998; font-size: 36px;">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://instagram.com" target="_blank" style="color: #e1306c; font-size: 36px;">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </div>
+</footer>
+
+  <script src="js/carrito.js"></script>
+  <script>
+    const enlaces = document.querySelectorAll("nav ul li a");
+  
+    enlaces.forEach(link => {
+      link.addEventListener("click", () => {
+        enlaces.forEach(l => l.classList.remove("activo"));
+        link.classList.add("activo");
+      });
+    });
+  </script>
+
+  <div id="barra-carrito">
+  🛒 <span id="cantidad-barra">0</span> productos - Total: $<span id="total-barra">0</span>
+  </div>
+
+</body>
+</html>
+
